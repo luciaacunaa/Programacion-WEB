@@ -1,0 +1,17 @@
+/*Ejercicio 1*/
+
+.bloque{
+    display: block;
+    width: 100px;
+    background-color: rgb(129, 101, 175);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/*Ejercicio 2*/
+.inline{
+    display: inline;
+    background-color: rgb(145, 121, 184);
+    padding: 5px;
+
+}

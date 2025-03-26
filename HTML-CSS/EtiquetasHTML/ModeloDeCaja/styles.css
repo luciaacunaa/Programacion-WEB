@@ -1,0 +1,32 @@
+.block{
+    display: block;
+    width: 200px;
+    background-color: rgb(129, 101, 175);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.inline {
+    display: inline;
+    background-color: rgb(129, 101, 175);
+    padding: 5px;
+}
+
+.inline-block{
+    display: inline;
+    background-color: rgb(129, 101, 175);
+    padding: 5px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(129, 101, 175);
+    padding: 5px;
+}
+
+.flex-item{
+    background-color: rgb(174, 130, 211);
+    padding: 10px;
+    margin: 5px;
+}
