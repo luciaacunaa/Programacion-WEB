@@ -1,0 +1,31 @@
+body{
+    background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/city.jpg);
+
+}
+.grilla{
+    display: grid;
+    /*grid-template-columns: 200px 200px 200px;*/
+   /* grid-template-columns: repeat(3,200px);*/
+   grid-template-columns: repeat(3, 1fr); /*fr es una fraccion y divide la cantidad de ancho de la pagina
+   en 3 (en este caso).*/
+    grid-auto-rows: auto;
+
+}
+
+img{
+    width: 100%;
+    /*object-fit: cover; como se rellena el contenedor con el objeto(foto)*/
+    aspect-ratio: 1/1;
+}
+
+ @media (max-width: 1024px){
+    .grilla{    
+    grid-template-columns: repeat(2,1fr);
+    }
+ }
+
+@media (max-width: 768px){
+    .grilla {
+        grid-template-columns: 1fr;
+    }
+}

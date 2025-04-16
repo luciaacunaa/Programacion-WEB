@@ -6,6 +6,7 @@
     display: flex;/**/
     justify-content: center; /*Eje X*/
     align-items: center;/*Eje Y*/
+    height: 100vh; /*vh fuerza que elo 100% de cualquier pantalla que tengas se complete*/
   }
 
   .texto {
