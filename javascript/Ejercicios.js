@@ -12,3 +12,4 @@ inventario.push(producto_uno, producto_dos, producto_tres, producto_cuatro)
 inventario.forEach((item) => {
     console.log("Producto:", item);
 });
+
