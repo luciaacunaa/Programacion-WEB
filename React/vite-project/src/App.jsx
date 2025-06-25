@@ -1,35 +1,22 @@
-import './App.css'
-import Pepito from './components/usuario/usuario';
-import { Proveedor } from './components/usuario/proveedor/Proveedor';
-import { useEffect, useState } from 'react';
+import { useState } from "react";
+import "./App.css";
 function App() {
-  const [characters, setCharacters] = useState([])
+
+  const[nombre, setNombre] = useState('');
 
 
-//useEfecct va a ejecutar el código que se encuentra dentro, tantas veces como se actualicen sus dependencias.
-//Si no hay dependencias se ejecuta solo antes del primer renderizado. 
-  useEffect(()=>{
-    fetch('https://rickandmortyapi.com/api/character')
-      .then(data => data.json())
-      .then(response => setCharacters(response.results));
-  }, [])
+  const handleClick =() =>{
+    console.log('hola')
+  };
+  const handInputChange = (event) =>{
+    setNombre(event.target.value);
+  }
 
-  return (
-    <>
-    {characters ?(
-      characters.map((item, index) => <p>{item.name}</p>)
-    ) : (
-      <> Cargando...</>
-    )}
-      
-    Hola Mundo
+  return (<>
+  <input type="text" placeholder="Escribir tu nombre"onChange={handInputChange} value={nombre}/>
+  <button onClick={handleClick}>Mostrar</button>
 
-    <button>Hola soy un botón</button>
-    <Pepito />
-    <Proveedor name={'Luci'} />
-    </>
-  );
-  
+  </>);
 }
 
 export default App;
