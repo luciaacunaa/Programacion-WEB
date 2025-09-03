@@ -1,22 +1,44 @@
 import { useState } from "react";
 import "./App.css";
+
 function App() {
+  const [num, setNum] = useState([1, 2, 3, 4]);
+  const [persona, setPersona] = useState({ nombre: "Lucia", edad: 18 });
 
-  const[nombre, setNombre] = useState('');
-
-
-  const handleClick =() =>{
-    console.log('hola')
-  };
-  const handInputChange = (event) =>{
-    setNombre(event.target.value);
+  // Agregar números consecutivos 3 puntitos
+  function myFuction() {
+    const ultimo = num[num.length - 1];
+    setNum([...num, ultimo + 1]);
   }
 
-  return (<>
-  <input type="text" placeholder="Escribir tu nombre"onChange={handInputChange} value={nombre}/>
-  <button onClick={handleClick}>Mostrar</button>
+  // Agregar propiedad nacionalidad 4 puntitos
+  function personaFun() {
+    const nPersona = {
+      ...persona,
+      nacionalidad: "Argentina",
+    };
+    setPersona(nPersona);
+  }
 
-  </>);
+  return (
+    <>
+      <div>
+        <h3>Lista de números</h3>
+        {num.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+        <button onClick={myFuction}>Agregar número</button>
+      </div>
+
+      <div>
+        <h3>Datos de persona</h3>
+        <p>Nombre: {persona.nombre}</p>
+        <p>Edad: {persona.edad}</p>
+        <p>Nacionalidad: {persona.nacionalidad}</p>
+        <button onClick={personaFun}>Agregar propiedad</button>
+      </div>
+    </>
+  );
 }
 
 export default App;
