@@ -1,23 +1,32 @@
-import { useState } from "react";
-import "./App.css";
+import { useState } from 'react' // hokea el react
+import './App.css'
 
 function App() {
-  const [num, setNum] = useState([1, 2, 3, 4]);
-  const [persona, setPersona] = useState({ nombre: "Lucia", edad: 18 });
+  const [num, setNum] = useState([1, 2, 3, 4])
+  const [persona, setPersona] = useState({ nombre: "Lucia", edad: 17 })
 
-  // Agregar números consecutivos 3 puntitos
+  // Agregar números consecutivos
   function myFuction() {
-    const ultimo = num[num.length - 1];
-    setNum([...num, ultimo + 1]);
+    const ultimo = num[num.length - 1]
+    setNum([...num, ultimo + 1])
   }
 
-  // Agregar propiedad nacionalidad 4 puntitos
+  // Agregar propiedad nacionalidad
   function personaFun() {
     const nPersona = {
       ...persona,
-      nacionalidad: "Argentina",
-    };
-    setPersona(nPersona);
+      nacionalidad: "Argentina"
+    }
+    setPersona(nPersona)
+  }
+
+  // Cambiar el nombre
+  function cambiarNombre() {
+    const nuevaPersona = {
+      ...persona,
+      nombre: "Ayelén" // acá podés poner el nombre que quieras
+    }
+    setPersona(nuevaPersona)
   }
 
   return (
@@ -35,10 +44,12 @@ function App() {
         <p>Nombre: {persona.nombre}</p>
         <p>Edad: {persona.edad}</p>
         <p>Nacionalidad: {persona.nacionalidad}</p>
+
         <button onClick={personaFun}>Agregar propiedad</button>
+        <button onClick={cambiarNombre}>Cambiar nombre</button>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
